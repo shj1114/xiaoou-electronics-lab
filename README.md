@@ -1,1 +1,18 @@
-# Xiaoou Electronics Assembly Learning Mini App. Mobile-ready project learning site: project report, course Q&A, six spoken lessons, engineering drawings, hands-on simulations, and classified learning resources.
+# 小欧实训室
+
+《电子产品装调》课程项目：**毫欧电阻分选仪的制作与调试**。
+
+## 手机网页版
+
+[打开小欧实训室](https://shj1114.github.io/xiaoou-electronics-lab/)
+
+手机浏览器或微信内置浏览器均可打开，无需安装，也无需登录 GitHub。
+
+## 功能
+
+- 智慧问答：内置课程知识库可直接使用；DeepSeek 开放式 AI 由访客在网页设置中填写自己的 API Key。密钥只保存在当前页面内存中，费用由访客自己的 DeepSeek 账户承担。
+- 数字人讲解：原创电路精灵小欧，含六节中文语音讲解、播放速度与进度控制。
+- 资料获取：项目报告、原理图、器件资料与分类检索。
+- 互动实训：两线与四线测量仿真、阈值分选、自测、笔记与收藏。
+
+学习进度、笔记和收藏保存在各自设备的浏览器中。互动仿真用于教学，不代表真实硬件测量。
