@@ -1,0 +1,1 @@
+# Xiaoou Electronics Assembly Learning Mini App. Mobile-ready project learning site: project report, course Q&A, six spoken lessons, engineering drawings, hands-on simulations, and classified learning resources.
