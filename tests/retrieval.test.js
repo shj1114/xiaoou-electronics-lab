@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {makeRetriever,checkCitations,localAnswer} from '../assets/retrieval.js';
+const chunks=readFileSync(new URL('../knowledge/chunks.jsonl',import.meta.url),'utf8').trim().split('\n').map(JSON.parse);
+const search=makeRetriever(chunks);
+test('four-wire question retrieves verified external explanation',()=>{assert.ok(search('为什么毫欧电阻测量要用四线法？').some(h=>h.id==='T1'));});
+test('ICL7107 query includes official reference voltage mapping',()=>{assert.equal(search('ICL7107实现2V满量程需要多少参考电压？')[0].id,'A1');});
+test('measured performance question retrieves explicit lack of measurement records',()=>{const hits=search('报告是否提供了整机实测精度数据？');assert.ok(hits.some(h=>h.text.includes('不虚构整机实测')));assert.match(localAnswer('报告是否实测达标？',hits),/不能直接当作已测得/);});
+test('unrelated questions do not inherit accidental course evidence',()=>{assert.equal(search('量子纠缠和薛定谔猫有什么关系？').length,0);assert.equal(search('你好').length,0);});
+test('fault diagnosis retrieves the report troubleshooting table',()=>{assert.match(search('显示读数漂移或跳数时，应如何按顺序排查？')[0].text,/恒流源稳定性/);});
+test('numeric local answer preserves SI unit conversions and theoretical status',()=>{const q='100mA激励200mΩ时压降和100倍放大输出是多少？';const result=localAnswer(q,search(q));assert.match(result,/20 mV/);assert.match(result,/2.000 V/);assert.match(result,/理论计算值/);});
+test('invalid citation is removed without substituting a fabricated citation',()=>{const result=checkCitations('有效 [T1]，无效 [C999]。',[{id:'T1'}]);assert.ok(result.text.includes('[T1]'));assert.ok(!result.text.includes('[C999]'));assert.deepEqual(result.invalid,['C999']);});
+test('corpus identifiers are unique and all entries have provenance',()=>{assert.equal(new Set(chunks.map(h=>h.id)).size,chunks.length);assert.ok(chunks.every(h=>h.source&&h.locator&&h.text));});

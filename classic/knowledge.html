@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'self'; base-uri 'self'">
+ <meta name="theme-color" content="#126e67"><meta name="description" content="电子产品装调课程领域化知识库：电学基础、元器件、识图、焊接工艺、仪表使用，以及毫欧电阻分选仪的制作与调试。">
+ <title>电子产品装调 · 领域化知识库</title>
+ <link rel="icon" href="assets/xiaoou.svg" type="image/svg+xml"><link rel="stylesheet" href="knowledge.css">
+ <script src="data.js" defer></script><script src="knowledge-data.js" defer></script><script src="knowledge.js" defer></script>
+</head>
+<body>
+ <a class="skip-link" href="#article">跳至知识正文</a>
+ <header class="site-header">
+  <div class="header-top"><a class="kb-logo" href="knowledge.html" aria-label="课程知识库首页"><span class="logo-symbol">Ω<span>＋</span></span><span>小欧 · 课程知识中心<small>ELECTRONICS LEARNING LIBRARY</small></span></a><div class="header-links"><a href="index.html">进入互动实训室 <span>↗</span></a><span class="header-version">课程资源 · V1.0</span></div></div>
+  <div class="header-title"><div><span class="eyebrow">从知识理解，到动手实践</span><h1>《电子产品装调》<em>领域化知识库</em></h1></div><div class="header-project"><span>项目实践</span><strong>毫欧电阻分选仪的制作与调试</strong></div></div>
+  <div class="search-row"><label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" autocomplete="off" placeholder="搜索知识点、器件型号、故障现象…" aria-label="搜索课程知识库"><kbd>/</kbd></label><div class="search-suggestions"><span>热门检索</span><button data-search="四线法">四线法</button><button data-search="焊接">焊接工艺</button><button data-search="校准">校准与排故</button></div></div>
+ </header>
+ <div class="mobile-tools"><button id="mobile-menu" aria-expanded="false" aria-controls="sidebar">☰ 知识目录</button><span id="mobile-current">课程总览</span><button id="mobile-search" aria-label="搜索知识">⌕</button></div>
+ <div class="layout">
+  <aside class="sidebar" id="sidebar"><div class="directory-heading"><div><span class="eyebrow">KNOWLEDGE DIRECTORY</span><h2>课程知识目录</h2></div><span id="topic-total" class="count-pill"></span></div><div class="scope-tabs" role="group" aria-label="目录范围"><button data-scope="all" aria-pressed="true">全部知识</button><button data-scope="saved" aria-pressed="false">我的收藏 <span id="saved-count">0</span></button></div><nav id="directory" aria-label="知识目录"></nav><div class="sidebar-footer"><span class="book-dot"></span><p>学会识图 · 规范装接 · 有据调试<small>围绕真实项目，建立完整知识链</small></p></div></aside>
+  <main id="main-content" class="reader"><div class="reading-top"><nav id="breadcrumb" aria-label="当前位置"></nav><button id="reset-view" class="quiet-button" hidden>返回课程总览</button><div class="reading-tools" id="reading-tools"><button id="font-size" title="调整字号" aria-label="调整正文字号">A<span>+</span></button><button id="print" title="打印当前知识" aria-label="打印当前知识">⎙</button></div></div><div id="search-status" role="status" class="search-status" hidden></div><article id="article" tabindex="-1"></article><footer class="reader-footer"><span>小欧 · 电子产品装调课程知识库</span><span>学有所据，做有所循。</span></footer></main>
+  <aside class="right-rail" aria-label="阅读辅助"><section class="rail-section"><span class="eyebrow">ON THIS PAGE</span><h2>本页导航</h2><nav id="page-toc" aria-label="本页内容"></nav></section><section class="project-card"><span class="card-label">实践项目</span><div class="circuit-mini" aria-hidden="true">＋ ━ <span>Ω</span> ━ −</div><h3>毫欧电阻分选仪</h3><p>把知识串成信号链，<br>把理解落实到测量。</p><a href="index.html">开始互动实训 <span>↗</span></a></section><section class="rail-section recent-section"><h2>最近阅读</h2><div id="recent-list"></div></section><section class="progress-note"><span id="read-count">0</span><div>已读知识点<small>学习轨迹保存在当前设备</small></div></section></aside>
+ </div>
+ <button class="back-top" id="back-top" aria-label="回到顶部" hidden>↑</button><div id="toast" role="status" class="toast" hidden></div>
+ <dialog id="image-dialog"><div class="dialog-toolbar"><strong id="image-title">图纸预览</strong><a id="image-original" target="_blank" rel="noopener">打开原图 ↗</a><button id="close-image" aria-label="关闭图纸">×</button></div><div class="zoom-container"><img id="zoom-image" alt=""></div><p>可横向滚动查看原图；手机可在新窗口打开原图放大。</p></dialog>
+</body></html>

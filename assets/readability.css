@@ -1,0 +1,98 @@
+/* Keep the soft visual palette while making learning content readable. */
+html{scroll-padding-top:90px}
+html body [hidden]{display:none!important}
+.nav-item{font-size:14px;color:#70697d}
+.breadcrumb,.connect-button{font-size:12px}
+.connect-button{min-height:39px}
+.connection-indicator{font-size:11px;color:#786d86}
+.page-intro h1{font-size:30px}
+.page-intro p:last-child{font-size:13px;color:#81758f}
+.course-chip{font-size:10px;color:#897a9a}
+.hero-copy h2{font-size:30px}
+.hero-copy p{font-size:12px;color:#847194}
+.hero-kicker{font-size:10px;color:#8b68aa}
+.hero-pills{font-size:10px;color:#9274aa}
+.stat-strip strong{font-size:14px}
+.stat-strip p>span{font-size:11px;color:#95859f}
+.stat-strip>div{padding:17px 18px}
+.section-heading h3{font-size:14px}
+.section-heading>span{font-size:10px;color:#9a8ba6}
+.prompt-card{padding:20px 18px}
+.prompt-card strong{font-size:13px;color:#51405f}
+.prompt-card small{font-size:9px;color:#a18aaf}
+.prompt-card em{font-size:11px;color:#9783a6}
+.composer textarea{font-size:14px;min-height:62px}
+.composer textarea::placeholder{color:#a293b1}
+.composer-options{font-size:10px}
+.composer-foot{font-size:9px;color:#a395af}
+.send-button{font-size:12px;padding:10px 16px;min-height:37px}
+.text-button{font-size:11px;color:#9271ad}
+.message-content{font-size:14px;color:#655370}
+.message-label{font-size:10px;color:#a38bb4}
+.evidence-card p{font-size:12px;color:#8d779d}
+.answer-meta{font-size:10px}
+.source-disclosure{font-size:11px}
+.knowledge-card h3{font-size:13px}
+.knowledge-card p{font-size:13px;color:#877492}
+.knowledge-card .source-loc{font-size:10px}
+.knowledge-search input{font-size:13px}
+.filter-chips button{font-size:11px;min-height:37px}
+.path-intro p,.step-main p{font-size:12px}
+.step-main h3{font-size:14px}
+.step-evidence{font-size:11px;color:#9e86ad}
+.complete-label{font-size:12px;min-height:30px}
+.input-grid label,.calculation-lines>div{font-size:12px}
+.calculation-lines span{color:#9b81ac}
+.field-note{font-size:11px;color:#a08aae}
+.quiz-card legend{font-size:14px}
+.quiz-option,.quiz-explanation{font-size:13px}
+.resource-banner strong{font-size:14px}
+.resource-banner p{font-size:12px}
+.resource-panel>summary,.resource-links{font-size:12px}
+.audio-lessons label{font-size:12px}
+.button{font-size:12px;min-height:40px}
+.dialog-description{font-size:13px;color:#9680a5}
+.field-label{font-size:12px;color:#886c9c}
+dialog select,.password-field input{font-size:13px}
+.remember-option{font-size:12px}
+.remember-option small{font-size:10px}
+.privacy-note{font-size:11px;color:#a28baf}
+.connection-result{font-size:12px}
+.settings-actions .button{min-height:43px}
+@media(max-width:600px){
+ .page-intro h1{font-size:26px}
+ .page-intro p:last-child{font-size:12px}
+ .hero-copy{padding-top:24px;padding-bottom:24px}
+ .hero-copy h2{font-size:24px}
+ .hero-copy p{font-size:10px;line-height:1.9}
+ .hero-kicker{font-size:8px}
+ .hero-pills{font-size:8px;gap:7px}
+ .hero-card{grid-template-columns:1.3fr .8fr;min-height:249px}
+ .hero-art{min-height:249px}
+ .stat-strip>div{padding:12px 9px}
+ .stat-strip strong{font-size:12px}
+ .stat-strip p>span{font-size:9px}
+ .prompt-card{padding:14px 12px}
+ .prompt-card strong{font-size:12px}
+ .prompt-card em{font-size:10px}
+ .prompt-card small{font-size:8px}
+ .composer textarea{font-size:14px;min-height:66px}
+ .composer-options{font-size:9px;gap:7px}
+ .review-option{font-size:9px}
+ .composer-foot{font-size:8px}
+ .composer-foot .text-button{font-size:9px}
+ .send-button{padding:9px 11px;font-size:11px;min-height:36px}
+ .connect-button{font-size:11px;min-height:38px}
+ .message-content{font-size:14px}
+ .step-main h3{font-size:13px}
+ .step-evidence{font-size:10px}
+ .input-grid label{font-size:11px}
+ .calculation-lines>div{font-size:11px}
+ .quiz-card legend{font-size:13px}
+ .resource-banner p{font-size:11px}
+ .knowledge-search input{font-size:12px}
+ dialog select,.password-field input{font-size:16px}
+ .privacy-note{font-size:10px}
+ .field-label{font-size:12px}
+ .connection-result{font-size:12px}
+}

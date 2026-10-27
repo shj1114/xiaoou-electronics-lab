@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob:; connect-src 'self' https://api.deepseek.com; object-src 'self'; base-uri 'self'; form-action 'self'">
+ <meta name="theme-color" content="#f7faf7"><meta name="description" content="电子产品装调课程：毫欧电阻分选仪的制作与调试。课程问答、数字人语音讲解与分类资料。">
+ <title>小欧实训室 · 电子产品装调</title>
+ <link rel="icon" href="assets/xiaoou.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+ <script src="data.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+ <aside class="desktop-brand" aria-hidden="true"><div class="brand-mark">Ω<span>+</span></div><p class="eyebrow">XIAOOU LAB</p><h1>让每一次探索，<br>都有回应。</h1><p>从理解电路，到完成作品。<br>你随身的电子装调实训搭档。</p><div class="desktop-line"></div><span>《电子产品装调》课程学习空间</span></aside>
+ <main class="app" id="app">
+  <header class="app-header"><div class="app-brand"><span class="logo">Ω</span><div><strong>小欧实训室<span class="tiny-dot"></span></strong><small>电子产品装调 · 项目学习空间</small></div></div><a class="knowledge-link" href="knowledge.html"><span>▤</span><span class="knowledge-link-label">课程知识库</span></a><button class="icon-button" id="settings-btn" aria-label="设置与学习记录" title="设置与学习记录"></button></header>
+  <div class="project-bar"><div class="project-icon" id="project-icon"></div><div><span>当前项目 <b>9 学时</b></span><p>毫欧电阻分选仪的制作与调试</p></div><button class="icon-button" id="project-info" aria-label="查看项目学习路线"></button></div>
+  <nav class="tabs" role="tablist" aria-label="课程功能"><button role="tab" id="tab-chat" aria-selected="true" aria-controls="panel-chat" data-tab="chat"><span data-icon="chat"></span>智慧问答</button><button role="tab" id="tab-tutor" aria-selected="false" aria-controls="panel-tutor" data-tab="tutor" tabindex="-1"><span data-icon="spark"></span>数字人讲解</button><button role="tab" id="tab-library" aria-selected="false" aria-controls="panel-library" data-tab="library" tabindex="-1"><span data-icon="book"></span>资料获取</button></nav>
+  <div class="viewport" id="viewport">
+   <section class="panel active" id="panel-chat" role="tabpanel" aria-labelledby="tab-chat">
+    <div class="chat-intro"><div class="intro-copy"><span class="section-kicker"><i></i> 课程知识库已就绪</span><h2>有疑问，<br>和小欧聊一聊。</h2><p>原理看不懂？调试卡住了？<br>我们一步一步找到答案。</p></div><button class="mascot-intro" id="hello-mascot" aria-label="和小欧打招呼"><img src="assets/xiaoou.svg" alt="原创电路精灵小欧"></button><span class="hero-doodle">R = U / I</span></div>
+    <div class="chat-tools"><span>从一个好问题开始</span><button id="change-prompts"><span data-icon="refresh"></span>换一换</button></div>
+    <div class="suggestions" id="suggestions"></div>
+    <div class="message-feed" id="messages" role="log" aria-live="polite" aria-label="问答记录"></div>
+    <button class="lab-entry" id="open-lab-chat"><span class="lab-icon" data-icon="sliders"></span><div><strong>动手试一试，更容易懂</strong><small>四线测量 · 电压计算 · 阈值分选</small></div><span data-icon="arrow"></span></button>
+    <p class="source-hint">依据项目报告与官方参考资料，重要结论请结合实测核验。</p>
+   </section>
+   <section class="panel" id="panel-tutor" role="tabpanel" aria-labelledby="tab-tutor" hidden>
+    <div class="tutor-title"><div><span class="section-kicker">MEET YOUR LAB PARTNER</span><h2>小欧，陪你学会。</h2></div><button class="round-button" id="tutor-sound" aria-label="语音讲解设置"><span data-icon="volume"></span></button></div>
+    <div class="tutor-stage" id="tutor-stage"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="floating-label float-one"><i></i>100 mA</span><span class="floating-label float-two">Ω · 电路精灵</span><span class="stage-spark spark-one">✦</span><span class="stage-spark spark-two">+</span><button id="tutor-mascot" class="tutor-mascot" aria-label="点击小欧进行互动"><img src="assets/xiaoou.svg" alt="薄荷绿色原创卡通电路精灵小欧"></button><span class="tap-hint" id="mascot-hint">点点我，看看会发生什么</span><div class="mascot-bubble" id="mascot-bubble" role="status" hidden></div></div>
+    <div class="player-card"><div class="player-heading"><span class="lesson-number" id="lesson-number">01</span><div><small id="lesson-category">正在学习 · 项目认知</small><h3 id="lesson-title">认识你的毫欧分选仪</h3></div><button id="show-transcript" class="text-button">文稿</button></div><div class="audio-progress"><input id="audio-seek" aria-label="讲解播放进度" type="range" min="0" max="100" value="0" step="0.1"><div><span id="audio-time">00:00</span><span id="audio-duration">语音讲解</span></div></div><div class="play-controls"><button class="icon-button" id="prev-lesson" aria-label="上一节"><span data-icon="previous"></span></button><button id="play-lesson" class="play-button"><span data-icon="play"></span><span id="play-label">开始听讲</span></button><button class="icon-button" id="next-lesson" aria-label="下一节"><span data-icon="next"></span></button><button id="play-speed" class="speed-button" aria-label="切换播放速度">1.0×</button></div><div id="transcript" class="transcript" hidden></div></div>
+    <div class="interaction-row"><button id="wave"><span data-icon="hand"></span>打个招呼</button><button id="ask-tutor"><span data-icon="chat"></span>我没听懂</button><button id="tutor-lab"><span data-icon="sliders"></span>互动实训</button></div>
+    <div class="section-heading"><h3>跟着章节，一步一步来</h3><span id="lesson-count">0 / 6 已完成</span></div><div id="lesson-list" class="lesson-list"></div>
+    <button class="quiz-entry" id="open-quiz"><span data-icon="check-circle"></span><div><strong>学会了吗？来个小挑战</strong><small>6 道题，检查你的关键知识点</small></div><span data-icon="arrow"></span></button>
+   </section>
+   <section class="panel" id="panel-library" role="tabpanel" aria-labelledby="tab-library" hidden>
+    <div class="library-heading"><span class="section-kicker">YOUR LEARNING TOOLBOX</span><h2>资料有序，学习有据。</h2><p>项目报告、官方手册与实训记录，一处找到。</p></div>
+    <label class="search-box"><span data-icon="search"></span><input id="resource-search" type="search" placeholder="搜索原理、器件、调试方法…" autocomplete="off" aria-label="搜索学习资料"><kbd>⌕</kbd></label>
+    <div class="filters" id="resource-filters" aria-label="资料分类"></div>
+    <div class="featured-resource" id="featured-resource"><div class="report-cover"><span>PROJECT<br>REPORT</span><strong>Ω</strong><small>课程实验设计</small></div><div><span class="resource-tag">你提供的原始资料</span><h3>毫欧电阻分选仪<br>实验项目设计报告</h3><p>完整正文 · 元件清单 · 原始电路图</p><button class="text-button" id="read-report">打开报告 <span data-icon="arrow"></span></button></div></div>
+    <div class="section-heading"><h3 id="resource-heading">全部资料</h3><span id="resource-count"></span></div><div id="resource-list" class="resource-list"></div><p class="source-hint">官方链接已于 <span id="checked-date"></span> 核对。<br>整理内容与原始来源分开标注；设计指标不等于实测结果。</p>
+   </section>
+  </div>
+  <footer id="chat-composer" class="composer-wrap"><div class="composer"><button class="icon-button" id="voice-input" aria-label="语音输入"><span data-icon="mic"></span></button><form id="chat-form"><label class="sr-only" for="chat-input">输入课程问题</label><textarea id="chat-input" rows="1" maxlength="2000" placeholder="把你的问题，交给小欧…"></textarea><button class="send-button" id="send-message" type="submit" aria-label="发送问题"><span data-icon="send"></span></button></form></div><div class="composer-note"><span><i></i><span id="ai-status">课程知识问答</span></span><button id="clear-chat">新对话</button></div></footer>
+  <div class="bottom-home" aria-hidden="true"></div>
+ </main>
+ <aside class="desktop-note" aria-hidden="true"><span class="note-doodle">✳</span><p>一个问题，<br>一次动手，<br>离答案更近一点。</p><small>01 智慧问答<br>02 数字人讲解<br>03 分类资料库</small><span class="desktop-pill"><i></i>为手机阅读而设计</span></aside>
+ <div class="modal-backdrop" id="modal-backdrop" hidden><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><header class="modal-header"><h2 id="modal-title"></h2><button class="icon-button" id="close-modal" aria-label="关闭弹窗"><span data-icon="close"></span></button></header><div id="modal-body" class="modal-body"></div></section></div>
+ <div id="toast" class="toast" role="status" hidden></div>
+ <audio id="lesson-audio" preload="metadata"></audio>
+</body>
+</html>
